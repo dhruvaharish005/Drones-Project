@@ -23,11 +23,13 @@ Tested on Intel x64/Ubuntu 24.04 and Apple Silicon/macOS 26.
 git clone https://github.com/learnsyslab/gym-pybullet-drones.git
 cd gym-pybullet-drones/
 
-conda create -n drones python=3.12
+conda create -n drones python=3.12 # or python=3.10 to use pybullet pre-built wheels
 conda activate drones
 
-# on Ubuntu, run `sudo apt install build-essential` to install `gcc` to build `pybullet`
-# on macOS, run `CFLAGS="-Dfdopen=fdopen" pip install pybullet --no-cache-dir` to build `pybullet`
+# on Ubuntu, install `gcc` to build `pybullet`
+#     sudo apt install build-essential
+# on macOS, build and install `pybullet` with
+#     CFLAGS="-Dfdopen=fdopen" pip install pybullet --no-cache-dir
 pip3 install -e .
 
 # check installed packages with `conda list`, deactivate with `conda deactivate`, remove with `conda remove -n drones --all`
